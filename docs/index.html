@@ -163,9 +163,31 @@
       z-index: 10;
     }
     
-    /* Hide corner logo on slide 1 (has big logo) */
-    .slide#slide1.active ~ .corner-logo {
-      display: none;
+    /* Angled celebration banner */
+    .celebration-banner {
+      position: fixed;
+      top: 30px;
+      left: -60px;
+      background: linear-gradient(90deg, #95c213, #3a731e);
+      color: white;
+      padding: 10px 80px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transform: rotate(-45deg);
+      transform-origin: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      z-index: 20;
+    }
+    
+    /* Cheers image styling */
+    .cheers-img {
+      max-height: 280px;
+      border-radius: 50%;
+      border: 4px solid #95c213;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
     }
     
     .big-number {
@@ -418,6 +440,7 @@
   <div class="slide" id="slide10">
     <h2>Thank You</h2>
     <div class="decorative-line"></div>
+    <img src="cheers-vanitha.png" alt="Cheers from Dr. Yadalla" class="cheers-img">
     <div class="quote">
       Thank you for letting us serve you for 20 years.<br><br>
       For trusting us with your health.<br><br>
@@ -439,6 +462,9 @@
     <div class="quote">The best is yet to come.</div>
   </div>
 
+  <!-- Angled Celebration Banner -->
+  <div class="celebration-banner" id="celebrationBanner">Celebrating 20 Years • Thank You!</div>
+
   <!-- Fixed Corner Logo (all slides except slide 1) -->
   <img src="yhealth-logo.png" alt="YHealth" class="corner-logo" id="cornerLogo">
 
@@ -448,12 +474,14 @@
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const cornerLogo = document.getElementById('cornerLogo');
+    const celebrationBanner = document.getElementById('celebrationBanner');
     
     function showSlide(index) {
       slides.forEach(s => s.classList.remove('active'));
       slides[index].classList.add('active');
-      // Hide corner logo on slide 1 (has big logo)
+      // Hide corner logo and banner on slide 1 (has big logo and title)
       cornerLogo.style.display = (index === 0) ? 'none' : 'block';
+      celebrationBanner.style.display = (index === 0) ? 'none' : 'block';
     }
     
     function nextSlide() {
@@ -470,6 +498,7 @@
     } else {
       // Initial state - hide on slide 1
       cornerLogo.style.display = 'none';
+      celebrationBanner.style.display = 'none';
     }
     
     // Change slide every 15 seconds
