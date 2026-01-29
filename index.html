@@ -474,6 +474,23 @@
     
     // Change slide every 15 seconds
     setInterval(nextSlide, 15000);
+    
+    // Keyboard navigation: Arrow keys or spacebar
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      } else if (e.key === 'ArrowLeft') {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      }
+    });
+    
+    // Click/tap to advance
+    document.body.addEventListener('click', function() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    });
   </script>
 
 </body>
