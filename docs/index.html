@@ -18,10 +18,11 @@
     .slide {
       display: none;
       min-height: 100vh;
-      padding: 50px 80px;
+      padding: 60px;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      text-align: center;
       animation: fadeIn 1s ease-in-out;
     }
     
@@ -32,13 +33,8 @@
       to { opacity: 1; }
     }
     
-    /* SLIDE 1: Hero */
-    .hero-container {
-      text-align: center;
-    }
-    
     .big-number {
-      font-size: 12rem;
+      font-size: 10rem;
       font-weight: 800;
       color: #f6e05e;
       text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
@@ -46,178 +42,86 @@
     }
     
     .years-label {
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 600;
       color: #f6e05e;
       text-transform: uppercase;
-      letter-spacing: 0.5em;
-      margin-bottom: 30px;
+      letter-spacing: 0.4em;
+      margin-bottom: 20px;
     }
     
-    .hero-title {
-      font-size: 5rem;
+    h1 {
+      font-size: 4.5rem;
       font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #f6e05e;
+      margin-bottom: 20px;
+    }
+    
+    .subtitle {
+      font-size: 2.2rem;
+      font-weight: 400;
+      opacity: 0.95;
       margin-bottom: 15px;
     }
     
-    .hero-subtitle {
-      font-size: 2.5rem;
-      opacity: 0.95;
-      margin-bottom: 10px;
-    }
-    
-    .hero-dates {
+    .tagline {
       font-size: 2rem;
       font-style: italic;
-      opacity: 0.85;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    
+    .quote {
+      font-size: 2.4rem;
+      font-style: italic;
+      max-width: 900px;
+      line-height: 1.4;
+      margin: 30px auto;
+    }
+    
+    .attribution {
+      font-size: 1.6rem;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+    
+    .timeline-item {
+      font-size: 2rem;
+      margin: 15px 0;
+      opacity: 0.95;
+    }
+    
+    .timeline-year {
+      color: #f6e05e;
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+    
+    .highlight {
+      color: #f6e05e;
+      font-weight: 600;
     }
     
     .decorative-line {
       width: 200px;
-      height: 4px;
+      height: 3px;
       background: #f6e05e;
-      margin: 25px auto;
+      margin: 30px auto;
       border-radius: 2px;
     }
     
-    /* SLIDE 2: Timeline */
-    .timeline-container {
-      width: 100%;
-      max-width: 1400px;
-    }
-    
-    .slide-title {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #f6e05e;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    
-    .timeline {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 0;
-    }
-    
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: rgba(246, 224, 94, 0.4);
-      transform: translateY(-50%);
-    }
-    
-    .timeline-item {
-      position: relative;
-      text-align: center;
-      flex: 1;
-      padding: 0 10px;
-    }
-    
-    .timeline-dot {
-      width: 20px;
-      height: 20px;
-      background: #f6e05e;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 0 15px rgba(246, 224, 94, 0.5);
-    }
-    
-    .timeline-year {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #f6e05e;
-      margin-bottom: 8px;
-    }
-    
-    .timeline-event {
-      font-size: 1.2rem;
-      line-height: 1.4;
-      opacity: 0.95;
-    }
-    
-    .timeline-highlight {
-      font-weight: 600;
-      color: #f6e05e;
-    }
-    
-    /* SLIDE 3: Philosophy + Recognition */
-    .split-container {
-      display: flex;
-      width: 100%;
-      max-width: 1400px;
-      gap: 60px;
-      align-items: stretch;
-    }
-    
-    .split-panel {
-      flex: 1;
-      padding: 40px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 20px;
-    }
-    
-    .panel-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #f6e05e;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    
-    .philosophy-quote {
-      font-size: 1.8rem;
-      font-style: italic;
-      text-align: center;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-    
-    .philosophy-tagline {
-      font-size: 1.4rem;
-      text-align: center;
-      opacity: 0.9;
-    }
-    
-    .recognition-list {
-      list-style: none;
-    }
-    
-    .recognition-item {
-      font-size: 1.4rem;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .recognition-item:last-child {
-      border-bottom: none;
-    }
-    
-    .recognition-icon {
-      font-size: 1.6rem;
-    }
-    
-    /* SLIDE 4: Thank You + Future */
-    .closing-container {
-      text-align: center;
-      max-width: 1000px;
-    }
-    
-    .founders-row {
+    .founders {
       display: flex;
       justify-content: center;
-      gap: 100px;
-      margin: 40px 0;
+      gap: 80px;
+      margin-top: 40px;
     }
     
     .founder {
@@ -225,167 +129,156 @@
     }
     
     .founder-name {
-      font-size: 2rem;
+      font-size: 2.4rem;
       font-weight: 600;
       color: #f6e05e;
     }
     
     .founder-role {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       opacity: 0.9;
     }
     
-    .founder-since {
-      font-size: 1.1rem;
-      opacity: 0.7;
+    .founder-years {
+      font-size: 1.4rem;
+      opacity: 0.8;
       margin-top: 5px;
-    }
-    
-    .thank-you-text {
-      font-size: 1.8rem;
-      line-height: 1.6;
-      margin: 30px 0;
-    }
-    
-    .future-text {
-      font-size: 1.5rem;
-      opacity: 0.9;
-      margin-top: 20px;
-    }
-    
-    .closing-tagline {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #f6e05e;
-      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <!-- SLIDE 1: Hero (20 seconds) -->
+  <!-- SLIDE 1: Opening -->
   <div class="slide active" id="slide1">
-    <div class="hero-container">
-      <div class="big-number">20</div>
-      <div class="years-label">Years</div>
-      <div class="decorative-line"></div>
-      <div class="hero-title">YHealth</div>
-      <div class="hero-subtitle">Dr. Vanitha Yadalla, M.D.</div>
-      <div class="hero-dates">January 30, 2006 — January 30, 2026</div>
-    </div>
+    <div class="big-number">20</div>
+    <div class="years-label">Years</div>
+    <div class="decorative-line"></div>
+    <h1>YHealth</h1>
+    <div class="subtitle">Dr. Vanitha Yadalla, M.D.</div>
+    <div class="tagline">January 30, 2006 — January 30, 2026</div>
   </div>
 
-  <!-- SLIDE 2: Timeline (30 seconds) -->
+  <!-- SLIDE 2: Philosophy -->
   <div class="slide" id="slide2">
-    <div class="timeline-container">
-      <div class="slide-title">Our Journey</div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2006</div>
-          <div class="timeline-event">Founded at<br><span class="timeline-highlight">1729 Belmar Blvd</span></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2012</div>
-          <div class="timeline-event"><span class="timeline-highlight">Hurricane Sandy</span><br>Rose from the waters</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2014</div>
-          <div class="timeline-event">Pioneered<br><span class="timeline-highlight">Electronic Records</span></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2019</div>
-          <div class="timeline-event">Went fully<br><span class="timeline-highlight">Paperless</span></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2021</div>
-          <div class="timeline-event">Expanded with<br><span class="timeline-highlight">Nurse Practitioners</span></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-year">2025</div>
-          <div class="timeline-event">New home:<br><span class="timeline-highlight">6 Exam Rooms</span></div>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 30px; font-size: 1.4rem; opacity: 0.9;">
-        Preventive Care • Functional Medicine • Integrative Health • Telemedicine
-      </div>
+    <h2>Our Philosophy</h2>
+    <div class="decorative-line"></div>
+    <div class="quote">
+      "You are the <span class="highlight">CEO of your health</span>.<br><br>
+      We are your partner in navigating<br>a complex medical world."
     </div>
+    <div class="decorative-line"></div>
+    <div class="tagline">For me, your health is personal!</div>
   </div>
 
-  <!-- SLIDE 3: Philosophy + Recognition (25 seconds) -->
+  <!-- SLIDE 3: The Journey Begins -->
   <div class="slide" id="slide3">
-    <div class="split-container">
-      <div class="split-panel">
-        <div class="panel-title">Our Philosophy</div>
-        <div class="philosophy-quote">
-          "You are the <span style="color: #f6e05e;">CEO of your health</span>.<br><br>
-          We are your partner in navigating a complex medical world."
-        </div>
-        <div class="decorative-line"></div>
-        <div class="philosophy-tagline">For me, your health is personal!</div>
-      </div>
-      <div class="split-panel">
-        <div class="panel-title">Recognition</div>
-        <ul class="recognition-list">
-          <li class="recognition-item">
-            <span class="recognition-icon">🏆</span>
-            <span>Award-winning for <strong>saving patients money</strong></span>
-          </li>
-          <li class="recognition-item">
-            <span class="recognition-icon">🏆</span>
-            <span>Honored for <strong>high quality metrics</strong></span>
-          </li>
-          <li class="recognition-item">
-            <span class="recognition-icon">🏆</span>
-            <span>Dr. Yadalla serves on <strong>Payer Advisory Boards</strong></span>
-          </li>
-          <li class="recognition-item">
-            <span class="recognition-icon">✨</span>
-            <span>Guiding physicians across the industry</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <h2>Where It All Began</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item"><span class="timeline-year">2006</span> — Started at 1729 Belmar Blvd</div>
+    <div class="timeline-item">A dream to serve our community</div>
+    <div class="timeline-item">One doctor. One vision. Endless dedication.</div>
   </div>
 
-  <!-- SLIDE 4: Thank You + Future (25 seconds) -->
+  <!-- SLIDE 4: Resilience -->
   <div class="slide" id="slide4">
-    <div class="closing-container">
-      <div class="slide-title">Thank You</div>
-      <div class="founders-row">
-        <div class="founder">
-          <div class="founder-name">Dr. Vanitha Yadalla</div>
-          <div class="founder-role">Physician & Visionary</div>
-          <div class="founder-since">Since Day One</div>
-        </div>
-        <div class="founder">
-          <div class="founder-name">Vidya</div>
-          <div class="founder-role">Heart of Operations</div>
-          <div class="founder-since">Since Day One</div>
-        </div>
+    <h2>Resilience</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item"><span class="timeline-year">2012</span> — Hurricane Sandy wiped out our office</div>
+    <div class="timeline-item">We lost everything. But not our commitment to you.</div>
+    <div class="timeline-item">We found a new home and kept serving.</div>
+    <div class="decorative-line"></div>
+    <div class="tagline">We rose from the waters — for you.</div>
+  </div>
+
+  <!-- SLIDE 5: Innovation -->
+  <div class="slide" id="slide5">
+    <h2>Pioneers in Care</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item"><span class="timeline-year">2014</span> — One of the first to adopt EMR</div>
+    <div class="timeline-item"><span class="timeline-year">2019</span> — Went fully paperless</div>
+    <div class="timeline-item"><span class="timeline-year">2021</span> — Added Nurse Practitioners</div>
+    <div class="timeline-item">A challenging transition — we grew stronger together</div>
+  </div>
+
+  <!-- SLIDE 6: Evolution -->
+  <div class="slide" id="slide6">
+    <h2>Evolution</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item">Preventive care — stopping illness before it starts</div>
+    <div class="timeline-item">Embraced <span class="highlight">Functional Medicine</span></div>
+    <div class="timeline-item">Became an <span class="highlight">Integrative Medicine</span> practice</div>
+    <div class="timeline-item">Telemedicine & same-day appointments</div>
+  </div>
+
+  <!-- SLIDE 7: New Home -->
+  <div class="slide" id="slide7">
+    <h2>A New Chapter</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item"><span class="timeline-year">October 2025</span></div>
+    <div class="timeline-item">From Suite 128 (3 exam rooms)</div>
+    <div class="timeline-item">To Suite 117 (6 exam rooms)</div>
+    <div class="timeline-item"><span class="highlight">Doubled our capacity to serve you</span></div>
+  </div>
+
+  <!-- SLIDE 8: Recognition -->
+  <div class="slide" id="slide8">
+    <h2>Award-Winning Care</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item">🏆 Recognized by payers for <span class="highlight">saving patients money</span></div>
+    <div class="timeline-item">🏆 Honored for <span class="highlight">high quality metrics</span></div>
+    <div class="timeline-item">🏆 Dr. Yadalla invited to <span class="highlight">Payer Boards</span></div>
+    <div class="timeline-item">Guiding other physicians. A trusted voice in medicine.</div>
+  </div>
+
+  <!-- SLIDE 9: The Founders -->
+  <div class="slide" id="slide9">
+    <h2>Two Hearts. Twenty Years.</h2>
+    <div class="decorative-line"></div>
+    <div class="founders">
+      <div class="founder">
+        <div class="founder-name">Dr. Vanitha Yadalla</div>
+        <div class="founder-role">Physician & Visionary</div>
+        <div class="founder-years">Day One</div>
       </div>
-      <div class="decorative-line"></div>
-      <div class="thank-you-text">
-        Thank you for trusting us with your health for 20 years.<br>
-        For being part of our family.
+      <div class="founder">
+        <div class="founder-name">Vidya</div>
+        <div class="founder-role">The Heart of Operations</div>
+        <div class="founder-years">Day One</div>
       </div>
-      <div class="future-text">
-        <strong>The Next 20 Years:</strong> Advanced testing • Specialized physicians • Continued innovation
-      </div>
-      <div class="closing-tagline">Step into who you were meant to be!</div>
     </div>
+    <div class="decorative-line"></div>
+    <div class="tagline">The foundation of YHealth since 2006</div>
+  </div>
+
+  <!-- SLIDE 10: Thank You -->
+  <div class="slide" id="slide10">
+    <h2>Thank You</h2>
+    <div class="decorative-line"></div>
+    <div class="quote">
+      Thank you for letting us serve you for 20 years.<br><br>
+      For trusting us with your health.<br><br>
+      For being part of our family.
+    </div>
+    <div class="decorative-line"></div>
+    <div class="tagline">Step into who you were meant to be!</div>
+  </div>
+
+  <!-- SLIDE 11: The Future -->
+  <div class="slide" id="slide11">
+    <h2>The Next 20 Years</h2>
+    <div class="decorative-line"></div>
+    <div class="timeline-item">Advanced testing & services</div>
+    <div class="timeline-item">Specialized physicians joining our team</div>
+    <div class="timeline-item">Continuing to innovate — for you</div>
+    <div class="decorative-line"></div>
+    <div class="quote">The best is yet to come.</div>
   </div>
 
   <script>
-    // Auto-rotate: Slide 1 (20s), Slide 2 (30s), Slide 3 (25s), Slide 4 (25s) = 100s total
+    // Auto-rotate slides every 15 seconds
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
-    const durations = [20000, 30000, 25000, 25000]; // milliseconds per slide
+    const totalSlides = slides.length;
     
     function showSlide(index) {
       slides.forEach(s => s.classList.remove('active'));
@@ -393,14 +286,12 @@
     }
     
     function nextSlide() {
-      const duration = durations[currentSlide];
-      currentSlide = (currentSlide + 1) % slides.length;
+      currentSlide = (currentSlide + 1) % totalSlides;
       showSlide(currentSlide);
-      setTimeout(nextSlide, durations[currentSlide]);
     }
     
-    // Start rotation after first slide
-    setTimeout(nextSlide, durations[0]);
+    // Change slide every 15 seconds
+    setInterval(nextSlide, 15000);
   </script>
 
 </body>
