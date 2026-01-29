@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YHealth - 20 Years</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%);
+      min-height: 100vh;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .slide {
+      display: none;
+      min-height: 100vh;
+      padding: 50px 80px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    .slide.active { display: flex; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* SLIDE 1: Hero */
+    .hero-container {
+      text-align: center;
+    }
+    
+    .big-number {
+      font-size: 12rem;
+      font-weight: 800;
+      color: #f6e05e;
+      text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+      line-height: 1;
+    }
+    
+    .years-label {
+      font-size: 4rem;
+      font-weight: 600;
+      color: #f6e05e;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      margin-bottom: 30px;
+    }
+    
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+      font-size: 2.5rem;
+      opacity: 0.95;
+      margin-bottom: 10px;
+    }
+    
+    .hero-dates {
+      font-size: 2rem;
+      font-style: italic;
+      opacity: 0.85;
+    }
+    
+    .decorative-line {
+      width: 200px;
+      height: 4px;
+      background: #f6e05e;
+      margin: 25px auto;
+      border-radius: 2px;
+    }
+    
+    /* SLIDE 2: Timeline */
+    .timeline-container {
+      width: 100%;
+      max-width: 1400px;
+    }
+    
+    .slide-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #f6e05e;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .timeline {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: rgba(246, 224, 94, 0.4);
+      transform: translateY(-50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      text-align: center;
+      flex: 1;
+      padding: 0 10px;
+    }
+    
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: #f6e05e;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 15px rgba(246, 224, 94, 0.5);
+    }
+    
+    .timeline-year {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f6e05e;
+      margin-bottom: 8px;
+    }
+    
+    .timeline-event {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      opacity: 0.95;
+    }
+    
+    .timeline-highlight {
+      font-weight: 600;
+      color: #f6e05e;
+    }
+    
+    /* SLIDE 3: Philosophy + Recognition */
+    .split-container {
+      display: flex;
+      width: 100%;
+      max-width: 1400px;
+      gap: 60px;
+      align-items: stretch;
+    }
+    
+    .split-panel {
+      flex: 1;
+      padding: 40px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+    }
+    
+    .panel-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #f6e05e;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    
+    .philosophy-quote {
+      font-size: 1.8rem;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    
+    .philosophy-tagline {
+      font-size: 1.4rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+    
+    .recognition-list {
+      list-style: none;
+    }
+    
+    .recognition-item {
+      font-size: 1.4rem;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .recognition-item:last-child {
+      border-bottom: none;
+    }
+    
+    .recognition-icon {
+      font-size: 1.6rem;
+    }
+    
+    /* SLIDE 4: Thank You + Future */
+    .closing-container {
+      text-align: center;
+      max-width: 1000px;
+    }
+    
+    .founders-row {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      margin: 40px 0;
+    }
+    
+    .founder {
+      text-align: center;
+    }
+    
+    .founder-name {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #f6e05e;
+    }
+    
+    .founder-role {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+    
+    .founder-since {
+      font-size: 1.1rem;
+      opacity: 0.7;
+      margin-top: 5px;
+    }
+    
+    .thank-you-text {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      margin: 30px 0;
+    }
+    
+    .future-text {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-top: 20px;
+    }
+    
+    .closing-tagline {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #f6e05e;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Hero (20 seconds) -->
+  <div class="slide active" id="slide1">
+    <div class="hero-container">
+      <div class="big-number">20</div>
+      <div class="years-label">Years</div>
+      <div class="decorative-line"></div>
+      <div class="hero-title">YHealth</div>
+      <div class="hero-subtitle">Dr. Vanitha Yadalla, M.D.</div>
+      <div class="hero-dates">January 30, 2006 — January 30, 2026</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Timeline (30 seconds) -->
+  <div class="slide" id="slide2">
+    <div class="timeline-container">
+      <div class="slide-title">Our Journey</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2006</div>
+          <div class="timeline-event">Founded at<br><span class="timeline-highlight">1729 Belmar Blvd</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2012</div>
+          <div class="timeline-event"><span class="timeline-highlight">Hurricane Sandy</span><br>Rose from the waters</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2014</div>
+          <div class="timeline-event">Pioneered<br><span class="timeline-highlight">Electronic Records</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2019</div>
+          <div class="timeline-event">Went fully<br><span class="timeline-highlight">Paperless</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-event">Expanded with<br><span class="timeline-highlight">Nurse Practitioners</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2025</div>
+          <div class="timeline-event">New home:<br><span class="timeline-highlight">6 Exam Rooms</span></div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px; font-size: 1.4rem; opacity: 0.9;">
+        Preventive Care • Functional Medicine • Integrative Health • Telemedicine
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Philosophy + Recognition (25 seconds) -->
+  <div class="slide" id="slide3">
+    <div class="split-container">
+      <div class="split-panel">
+        <div class="panel-title">Our Philosophy</div>
+        <div class="philosophy-quote">
+          "You are the <span style="color: #f6e05e;">CEO of your health</span>.<br><br>
+          We are your partner in navigating a complex medical world."
+        </div>
+        <div class="decorative-line"></div>
+        <div class="philosophy-tagline">For me, your health is personal!</div>
+      </div>
+      <div class="split-panel">
+        <div class="panel-title">Recognition</div>
+        <ul class="recognition-list">
+          <li class="recognition-item">
+            <span class="recognition-icon">🏆</span>
+            <span>Award-winning for <strong>saving patients money</strong></span>
+          </li>
+          <li class="recognition-item">
+            <span class="recognition-icon">🏆</span>
+            <span>Honored for <strong>high quality metrics</strong></span>
+          </li>
+          <li class="recognition-item">
+            <span class="recognition-icon">🏆</span>
+            <span>Dr. Yadalla serves on <strong>Payer Advisory Boards</strong></span>
+          </li>
+          <li class="recognition-item">
+            <span class="recognition-icon">✨</span>
+            <span>Guiding physicians across the industry</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Thank You + Future (25 seconds) -->
+  <div class="slide" id="slide4">
+    <div class="closing-container">
+      <div class="slide-title">Thank You</div>
+      <div class="founders-row">
+        <div class="founder">
+          <div class="founder-name">Dr. Vanitha Yadalla</div>
+          <div class="founder-role">Physician & Visionary</div>
+          <div class="founder-since">Since Day One</div>
+        </div>
+        <div class="founder">
+          <div class="founder-name">Vidya</div>
+          <div class="founder-role">Heart of Operations</div>
+          <div class="founder-since">Since Day One</div>
+        </div>
+      </div>
+      <div class="decorative-line"></div>
+      <div class="thank-you-text">
+        Thank you for trusting us with your health for 20 years.<br>
+        For being part of our family.
+      </div>
+      <div class="future-text">
+        <strong>The Next 20 Years:</strong> Advanced testing • Specialized physicians • Continued innovation
+      </div>
+      <div class="closing-tagline">Step into who you were meant to be!</div>
+    </div>
+  </div>
+
+  <script>
+    // Auto-rotate: Slide 1 (20s), Slide 2 (30s), Slide 3 (25s), Slide 4 (25s) = 100s total
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const durations = [20000, 30000, 25000, 25000]; // milliseconds per slide
+    
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+      const duration = durations[currentSlide];
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+      setTimeout(nextSlide, durations[currentSlide]);
+    }
+    
+    // Start rotation after first slide
+    setTimeout(nextSlide, durations[0]);
+  </script>
+
+</body>
+</html>
