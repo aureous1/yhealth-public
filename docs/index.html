@@ -9,13 +9,14 @@
     
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%);
+      /* Y Health brand: Navy gradient */
+      background: linear-gradient(135deg, #0c3475 0%, #2661c2 50%, #3366cc 100%);
       min-height: 100vh;
       color: white;
       overflow: hidden;
     }
     
-    /* Floating Balloons */
+    /* Floating Balloons - Brand Colors */
     .balloons {
       position: fixed;
       top: 0;
@@ -47,16 +48,17 @@
       background: rgba(255,255,255,0.5);
     }
     
-    .balloon:nth-child(1) { left: 5%; background: #f6e05e; animation-duration: 12s; animation-delay: 0s; }
-    .balloon:nth-child(2) { left: 15%; background: #fc8181; animation-duration: 14s; animation-delay: 2s; }
-    .balloon:nth-child(3) { left: 25%; background: #68d391; animation-duration: 11s; animation-delay: 4s; }
-    .balloon:nth-child(4) { left: 35%; background: #63b3ed; animation-duration: 13s; animation-delay: 1s; }
-    .balloon:nth-child(5) { left: 45%; background: #f6ad55; animation-duration: 15s; animation-delay: 3s; }
-    .balloon:nth-child(6) { left: 55%; background: #b794f4; animation-duration: 12s; animation-delay: 5s; }
-    .balloon:nth-child(7) { left: 65%; background: #f687b3; animation-duration: 14s; animation-delay: 2s; }
-    .balloon:nth-child(8) { left: 75%; background: #f6e05e; animation-duration: 11s; animation-delay: 4s; }
-    .balloon:nth-child(9) { left: 85%; background: #68d391; animation-duration: 13s; animation-delay: 0s; }
-    .balloon:nth-child(10) { left: 95%; background: #fc8181; animation-duration: 15s; animation-delay: 3s; }
+    /* Brand colors for balloons */
+    .balloon:nth-child(1) { left: 5%; background: #2661c2; animation-duration: 12s; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 15%; background: #95c213; animation-duration: 14s; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 25%; background: #ffffff; animation-duration: 11s; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 35%; background: #3366cc; animation-duration: 13s; animation-delay: 1s; }
+    .balloon:nth-child(5) { left: 45%; background: #95c213; animation-duration: 15s; animation-delay: 3s; }
+    .balloon:nth-child(6) { left: 55%; background: #2661c2; animation-duration: 12s; animation-delay: 5s; }
+    .balloon:nth-child(7) { left: 65%; background: #ffffff; animation-duration: 14s; animation-delay: 2s; }
+    .balloon:nth-child(8) { left: 75%; background: #95c213; animation-duration: 11s; animation-delay: 4s; }
+    .balloon:nth-child(9) { left: 85%; background: #3366cc; animation-duration: 13s; animation-delay: 0s; }
+    .balloon:nth-child(10) { left: 95%; background: #ffffff; animation-duration: 15s; animation-delay: 3s; }
     
     @keyframes floatUp {
       0% { transform: translateY(0) rotate(0deg); opacity: 0; }
@@ -65,7 +67,7 @@
       100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
     }
     
-    /* Confetti */
+    /* Confetti - Brand Colors */
     .confetti {
       position: fixed;
       top: 0;
@@ -85,15 +87,15 @@
       opacity: 0.8;
     }
     
-    .confetti-piece:nth-child(1) { left: 10%; background: #f6e05e; animation-duration: 8s; animation-delay: 0s; transform: rotate(15deg); }
-    .confetti-piece:nth-child(2) { left: 20%; background: #fc8181; animation-duration: 9s; animation-delay: 1s; transform: rotate(-20deg); }
-    .confetti-piece:nth-child(3) { left: 30%; background: #68d391; animation-duration: 7s; animation-delay: 2s; transform: rotate(25deg); }
-    .confetti-piece:nth-child(4) { left: 40%; background: #63b3ed; animation-duration: 10s; animation-delay: 0.5s; transform: rotate(-15deg); }
-    .confetti-piece:nth-child(5) { left: 50%; background: #f6ad55; animation-duration: 8s; animation-delay: 1.5s; transform: rotate(30deg); }
-    .confetti-piece:nth-child(6) { left: 60%; background: #b794f4; animation-duration: 9s; animation-delay: 2.5s; transform: rotate(-25deg); }
-    .confetti-piece:nth-child(7) { left: 70%; background: #f687b3; animation-duration: 7s; animation-delay: 0s; transform: rotate(10deg); }
-    .confetti-piece:nth-child(8) { left: 80%; background: #f6e05e; animation-duration: 10s; animation-delay: 1s; transform: rotate(-30deg); }
-    .confetti-piece:nth-child(9) { left: 90%; background: #68d391; animation-duration: 8s; animation-delay: 2s; transform: rotate(20deg); }
+    .confetti-piece:nth-child(1) { left: 10%; background: #95c213; animation-duration: 8s; animation-delay: 0s; transform: rotate(15deg); }
+    .confetti-piece:nth-child(2) { left: 20%; background: #2661c2; animation-duration: 9s; animation-delay: 1s; transform: rotate(-20deg); }
+    .confetti-piece:nth-child(3) { left: 30%; background: #ffffff; animation-duration: 7s; animation-delay: 2s; transform: rotate(25deg); }
+    .confetti-piece:nth-child(4) { left: 40%; background: #95c213; animation-duration: 10s; animation-delay: 0.5s; transform: rotate(-15deg); }
+    .confetti-piece:nth-child(5) { left: 50%; background: #3366cc; animation-duration: 8s; animation-delay: 1.5s; transform: rotate(30deg); }
+    .confetti-piece:nth-child(6) { left: 60%; background: #ffffff; animation-duration: 9s; animation-delay: 2.5s; transform: rotate(-25deg); }
+    .confetti-piece:nth-child(7) { left: 70%; background: #95c213; animation-duration: 7s; animation-delay: 0s; transform: rotate(10deg); }
+    .confetti-piece:nth-child(8) { left: 80%; background: #2661c2; animation-duration: 10s; animation-delay: 1s; transform: rotate(-30deg); }
+    .confetti-piece:nth-child(9) { left: 90%; background: #ffffff; animation-duration: 8s; animation-delay: 2s; transform: rotate(20deg); }
     
     @keyframes confettiFall {
       0% { transform: translateY(0) rotate(0deg); opacity: 0; }
@@ -107,7 +109,7 @@
       position: fixed;
       width: 8px;
       height: 8px;
-      background: #f6e05e;
+      background: #ffffff;
       border-radius: 50%;
       animation: sparkle 2s ease-in-out infinite;
       z-index: 0;
@@ -145,10 +147,16 @@
       to { opacity: 1; }
     }
     
+    /* Logo */
+    .logo {
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+    
     .big-number {
       font-size: 10rem;
       font-weight: 800;
-      color: #f6e05e;
+      color: #ffffff;
       text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
       line-height: 1;
     }
@@ -156,7 +164,7 @@
     .years-label {
       font-size: 4rem;
       font-weight: 900;
-      color: #f6e05e;
+      color: #95c213;
       text-transform: uppercase;
       letter-spacing: 0.5em;
       margin-bottom: 20px;
@@ -173,7 +181,7 @@
     h2 {
       font-size: 2.8rem;
       font-weight: 600;
-      color: #f6e05e;
+      color: #95c213;
       margin-bottom: 20px;
     }
     
@@ -212,20 +220,20 @@
     }
     
     .timeline-year {
-      color: #f6e05e;
+      color: #95c213;
       font-weight: 700;
       font-size: 2.2rem;
     }
     
     .highlight {
-      color: #f6e05e;
+      color: #95c213;
       font-weight: 600;
     }
     
     .decorative-line {
       width: 200px;
       height: 3px;
-      background: #f6e05e;
+      background: #95c213;
       margin: 30px auto;
       border-radius: 2px;
     }
@@ -244,7 +252,7 @@
     .founder-name {
       font-size: 2.4rem;
       font-weight: 600;
-      color: #f6e05e;
+      color: #95c213;
     }
     
     .founder-role {
@@ -296,12 +304,12 @@
 
   <!-- SLIDE 1: Opening -->
   <div class="slide active" id="slide1">
+    <img src="yhealth-logo.png" alt="YHealth" class="logo">
     <div class="big-number">20</div>
     <div class="years-label">Years</div>
     <div class="decorative-line"></div>
-    <h1>YHealth</h1>
     <div class="subtitle">Dr. Vanitha Yadalla, M.D.</div>
-    <div class="tagline">January 30, <strong style="font-weight:800; font-style:normal; color:#f6e05e; font-size:1.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">2006</strong> — January 30, <strong style="font-weight:800; font-style:normal; color:#f6e05e; font-size:1.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">2026</strong></div>
+    <div class="tagline">January 30, <strong style="font-weight:800; font-style:normal; color:#95c213; font-size:1.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">2006</strong> — January 30, <strong style="font-weight:800; font-style:normal; color:#95c213; font-size:1.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">2026</strong></div>
   </div>
 
   <!-- SLIDE 2: Philosophy -->
