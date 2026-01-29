@@ -153,6 +153,21 @@
       margin-bottom: 20px;
     }
     
+    /* Fixed corner logo */
+    .corner-logo {
+      position: fixed;
+      bottom: 30px;
+      right: 40px;
+      width: 150px;
+      opacity: 0.9;
+      z-index: 10;
+    }
+    
+    /* Hide corner logo on slide 1 (has big logo) */
+    .slide#slide1.active ~ .corner-logo {
+      display: none;
+    }
+    
     .big-number {
       font-size: 10rem;
       font-weight: 800;
@@ -423,21 +438,30 @@
     <div class="quote">The best is yet to come.</div>
   </div>
 
+  <!-- Fixed Corner Logo (all slides except slide 1) -->
+  <img src="yhealth-logo.png" alt="YHealth" class="corner-logo" id="cornerLogo">
+
   <script>
     // Auto-rotate slides every 15 seconds
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
+    const cornerLogo = document.getElementById('cornerLogo');
     
     function showSlide(index) {
       slides.forEach(s => s.classList.remove('active'));
       slides[index].classList.add('active');
+      // Hide corner logo on slide 1 (has big logo)
+      cornerLogo.style.display = (index === 0) ? 'none' : 'block';
     }
     
     function nextSlide() {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide(currentSlide);
     }
+    
+    // Initial state - hide on slide 1
+    cornerLogo.style.display = 'none';
     
     // Change slide every 15 seconds
     setInterval(nextSlide, 15000);
