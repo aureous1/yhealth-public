@@ -461,8 +461,16 @@
       showSlide(currentSlide);
     }
     
-    // Initial state - hide on slide 1
-    cornerLogo.style.display = 'none';
+    // Check URL for specific slide (e.g., ?slide=7)
+    const urlParams = new URLSearchParams(window.location.search);
+    const startSlide = parseInt(urlParams.get('slide')) - 1 || 0;
+    if (startSlide > 0 && startSlide < totalSlides) {
+      currentSlide = startSlide;
+      showSlide(currentSlide);
+    } else {
+      // Initial state - hide on slide 1
+      cornerLogo.style.display = 'none';
+    }
     
     // Change slide every 15 seconds
     setInterval(nextSlide, 15000);
