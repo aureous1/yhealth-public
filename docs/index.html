@@ -15,6 +15,116 @@
       overflow: hidden;
     }
     
+    /* Floating Balloons */
+    .balloons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 75px;
+      border-radius: 50% 50% 50% 50%;
+      animation: floatUp linear infinite;
+      opacity: 0.7;
+    }
+    
+    .balloon::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: rgba(255,255,255,0.5);
+    }
+    
+    .balloon:nth-child(1) { left: 5%; background: #f6e05e; animation-duration: 12s; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 15%; background: #fc8181; animation-duration: 14s; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 25%; background: #68d391; animation-duration: 11s; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 35%; background: #63b3ed; animation-duration: 13s; animation-delay: 1s; }
+    .balloon:nth-child(5) { left: 45%; background: #f6ad55; animation-duration: 15s; animation-delay: 3s; }
+    .balloon:nth-child(6) { left: 55%; background: #b794f4; animation-duration: 12s; animation-delay: 5s; }
+    .balloon:nth-child(7) { left: 65%; background: #f687b3; animation-duration: 14s; animation-delay: 2s; }
+    .balloon:nth-child(8) { left: 75%; background: #f6e05e; animation-duration: 11s; animation-delay: 4s; }
+    .balloon:nth-child(9) { left: 85%; background: #68d391; animation-duration: 13s; animation-delay: 0s; }
+    .balloon:nth-child(10) { left: 95%; background: #fc8181; animation-duration: 15s; animation-delay: 3s; }
+    
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.7; }
+      90% { opacity: 0.7; }
+      100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
+    }
+    
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .confetti-piece {
+      position: absolute;
+      top: -20px;
+      width: 10px;
+      height: 20px;
+      animation: confettiFall linear infinite;
+      opacity: 0.8;
+    }
+    
+    .confetti-piece:nth-child(1) { left: 10%; background: #f6e05e; animation-duration: 8s; animation-delay: 0s; transform: rotate(15deg); }
+    .confetti-piece:nth-child(2) { left: 20%; background: #fc8181; animation-duration: 9s; animation-delay: 1s; transform: rotate(-20deg); }
+    .confetti-piece:nth-child(3) { left: 30%; background: #68d391; animation-duration: 7s; animation-delay: 2s; transform: rotate(25deg); }
+    .confetti-piece:nth-child(4) { left: 40%; background: #63b3ed; animation-duration: 10s; animation-delay: 0.5s; transform: rotate(-15deg); }
+    .confetti-piece:nth-child(5) { left: 50%; background: #f6ad55; animation-duration: 8s; animation-delay: 1.5s; transform: rotate(30deg); }
+    .confetti-piece:nth-child(6) { left: 60%; background: #b794f4; animation-duration: 9s; animation-delay: 2.5s; transform: rotate(-25deg); }
+    .confetti-piece:nth-child(7) { left: 70%; background: #f687b3; animation-duration: 7s; animation-delay: 0s; transform: rotate(10deg); }
+    .confetti-piece:nth-child(8) { left: 80%; background: #f6e05e; animation-duration: 10s; animation-delay: 1s; transform: rotate(-30deg); }
+    .confetti-piece:nth-child(9) { left: 90%; background: #68d391; animation-duration: 8s; animation-delay: 2s; transform: rotate(20deg); }
+    
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
+    }
+    
+    /* Sparkles */
+    .sparkle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: #f6e05e;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
+      z-index: 0;
+    }
+    
+    .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 30%; left: 90%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { top: 70%; left: 15%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { top: 80%; left: 85%; animation-delay: 1.5s; }
+    .sparkle:nth-child(5) { top: 50%; left: 5%; animation-delay: 0.3s; }
+    .sparkle:nth-child(6) { top: 40%; left: 95%; animation-delay: 0.8s; }
+    
+    @keyframes sparkle {
+      0%, 100% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1); opacity: 1; }
+    }
+    
     .slide {
       display: none;
       min-height: 100vh;
@@ -24,6 +134,8 @@
       flex-direction: column;
       text-align: center;
       animation: fadeIn 1s ease-in-out;
+      position: relative;
+      z-index: 1;
     }
     
     .slide.active { display: flex; }
@@ -42,12 +154,13 @@
     }
     
     .years-label {
-      font-size: 3.5rem;
-      font-weight: 600;
+      font-size: 4rem;
+      font-weight: 900;
       color: #f6e05e;
       text-transform: uppercase;
-      letter-spacing: 0.4em;
+      letter-spacing: 0.5em;
       margin-bottom: 20px;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
     }
     
     h1 {
@@ -147,6 +260,39 @@
   </style>
 </head>
 <body>
+
+  <!-- Celebratory Elements -->
+  <div class="balloons">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+  </div>
+  
+  <div class="confetti">
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+  </div>
+  
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
 
   <!-- SLIDE 1: Opening -->
   <div class="slide active" id="slide1">
